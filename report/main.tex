@@ -78,7 +78,8 @@ This project presents a comprehensive natural language processing pipeline for m
 \\
 \\
 \\
-Source code available at: \url{https://github.com/littlemicrowave/NLP-disaster-messages} \\ 
+Code is publicly available at: \url{https://github.com/littlemicrowave/NLP-disaster-messages} \\ 
+\\
 \\
 Keywords: NLP, Topic Modeling, Deep Learning, Machine Learning, NER, LDA, Sentiment analysis, Text Preprocessing, Message Classification 
 \end{abstract}
@@ -635,9 +636,13 @@ No significant difference was observed in this case as well.
   \label{fig:distilbert}
 \end{figure}
 
-During training, the model exhibited smooth convergence until epoch 5 and then started overfitting, which is seen from binary cross-entropy loss graph for training and evaluation samples, finishing with the validation AUC of 0.83. The final evaluation yielded a macro-F1 of 0.32, micro-F1 of 0.69, and weighted-F1 of 0.64, indicating strong performance on dominant categories and poor generalization across others.  
-High precision and recall were achieved for frequent categories such as \texttt{related} (F1 0.90), \texttt{aid\_related} (F1 0.75), \texttt{food} (F1 0.81), and \texttt{weather\_related} (F1 0.80). However, categories with limited examples—such as \texttt{tools}, \texttt{hospitals}, \texttt{shops}, and \texttt{aid\_centers} — were rarely detected (F1 0.00), consistent with severe class imbalance in the dataset. Mid-frequency classes (\texttt{medical\_help}, \texttt{refugees}, \texttt{transport}) achieved partial recognition with F1 scores between 0.3 and 0.5.  
-AUC curves and per-class confusion matrices confirmed that the model effectively captured semantic relations for distinguishing disaster related and non-related messages, although it can’t properly specify any other disaster-related categories for such messages. A key observation is that aggressive text preprocessing degraded DistilBERT’s performance relative to its potential. As the transformer was pretrained on raw, case-sensitive text, the lack of stop-words, punctuation, capitalization in addition with lemmatization removed valuable syntactic and semantic cues, shortening inputs and reducing the richness of contextual information available during fine-tuning. That was further examined in the example below, when we have removed the step of stop-word removal and lemmatization from text preprocessing.
+During training, the model exhibited smooth convergence until epoch 5 and then started overfitting, which is seen from binary cross-entropy loss graph for training and evaluation samples, finishing with the validation AUC of 0.83.
+
+The final evaluation yielded a macro-F1 of 0.32, micro-F1 of 0.69, and weighted-F1 of 0.64, indicating strong performance on dominant categories and poor generalization across others. High precision and recall were achieved for frequent categories such as \texttt{related} (F1 0.90), \texttt{aid\_related} (F1 0.75), \texttt{food} (F1 0.81), and \texttt{weather\_related} (F1 0.80). However, categories with limited examples—such as \texttt{tools}, \texttt{hospitals}, \texttt{shops}, and \texttt{aid\_centers} — were rarely detected (F1 0.00), consistent with severe class imbalance in the dataset. Mid-frequency classes (\texttt{medical\_help}, \texttt{refugees}, \texttt{transport}) achieved partial recognition with F1 scores between 0.3 and 0.5.  
+
+AUC curves and per-class confusion matrices confirmed that the model effectively captured semantic relations for distinguishing disaster related and non-related messages, although it can’t properly specify any other disaster-related categories for such messages. 
+
+A key observation is that aggressive text preprocessing degraded DistilBERT’s performance relative to its potential. As the transformer was pretrained on raw, case-sensitive text, the lack of stop-words, punctuation, capitalization in addition with lemmatization removed valuable syntactic and semantic cues, shortening inputs and reducing the richness of contextual information available during fine-tuning. That was further examined in the example below, when we have removed the step of stop-word removal and lemmatization from text preprocessing.
 
 \begin{table}[H]
   \caption{DistilBERT on light text cleaning}
