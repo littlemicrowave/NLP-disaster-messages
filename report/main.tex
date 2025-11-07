@@ -18,7 +18,6 @@
 % to compile a camera-ready version, add the [final] option, e.g.:
 \usepackage[final,nonatbib]{neurips_2022}
 
-
 % to avoid loading the natbib package, add option nonatbib:
 % \usepackage[nonatbib]{neurips_2024}
 
@@ -38,22 +37,25 @@
 \usepackage[style=numeric,sorting=none]{biblatex}
 \addbibresource{citations.bib}
 
-\title{NLP Pipeline for disaster response message classification and analysis}
+\title{NLP Pipeline for Disaster Response Message Classification and Analysis}
 
 \author{%
   Leo Davidov \\
    %University of Oulu, Finland\\
   \texttt{leo.davidov@student.oulu.fi} \\
+  2504435
   % examples of more authors
   \And
   Bharathi Sekar \\
    %University of Oulu, Finland\\
   \texttt{bharathi.sekar@student.oulu.fi} \\
+  2409295
   % examples of more authors
   \And
   Chamudi Vidanagama \\
    %University of Oulu, Finland\\
   \texttt{chamudi.vidanagama@student.oulu.fi} \\
+  2405189
   % examples of more authors
   \And
   TA in charge: Fuzel Shaik  \\
@@ -65,8 +67,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-This project presents a comprehensive natural language processing pipeline for multi-label classification and analysis of disaster response messages. Using the publicly available Disaster Response Messages dataset. A range of traditional and deep learning models were evaluated to assess their effectiveness in handling short, noisy, and imbalanced textual data. Classical linear models such as Logistic Regression and LinearSVC trained on TF-IDF and BoW representations demonstrated good baseline performance, achieving macro-F1 scores around 0.40–0.45 in multi-label classification of 35 targets. Deep neural networks, including dense multilayer perceptrons and bidirectional LSTM architectures were also examined along with BERT transformer. Beyond classification, auxiliary analyses such as Named Entity Recognition (NER), Topic Modeling with Latent Dirichlet Allocation (LDA) and BERTopic, along with Sentiment Analysis using VADER, and TextBlob provided interpretable insights into location, emotional tone, and emerging disaster themes. The integrated approach demonstrates that traditional vector-based models remain competitive for low-resource crisis text.
-\\
+This project presents a comprehensive natural language processing pipeline for multi-label classification and analysis of disaster response messages, using the publicly available Disaster Response Messages dataset. A range of traditional and deep learning models were evaluated to assess their effectiveness in handling short, noisy, and imbalanced textual data. Classical linear models such as Logistic Regression and LinearSVC trained on TF-IDF and BoW representations demonstrated a good baseline performance, achieving macro-F1 scores around 0.40--0.45 in multi-label classification of 35 targets. Deep neural networks, including dense multilayer perceptrons and bidirectional LSTM architectures were also examined along with BERT transformer. Beyond classification, auxiliary analyses such as Named Entity Recognition (NER), Topic Modeling with Latent Dirichlet Allocation (LDA) and BERTopic, along with Sentiment Analysis using VADER, and TextBlob provided interpretable insights into location, emotional tone, and emerging disaster themes. The integrated approach demonstrates that traditional vector-based models remain competitive for low-resource crisis text.
 \\
 \\
 \\
@@ -80,7 +81,6 @@ This project presents a comprehensive natural language processing pipeline for m
 \\
 Code is publicly available at: \url{https://github.com/littlemicrowave/NLP-disaster-messages} \\ 
 \\
-\\
 Keywords: NLP, Topic Modeling, Deep Learning, Machine Learning, NER, LDA, Sentiment analysis, Text Preprocessing, Message Classification 
 \end{abstract}
 \clearpage
@@ -89,11 +89,11 @@ Keywords: NLP, Topic Modeling, Deep Learning, Machine Learning, NER, LDA, Sentim
 
 Disaster response message classification is an established yet evolving domain intersecting Natural Language Processing (NLP) and humanitarian response analytics. Prior studies such as those by Imran et al.~\cite{imran2015processing} and Nguyen et al.~\cite{nguyen2017robust} explored the automated categorization of social media crisis data using logistic regression and SVM-based frameworks, demonstrating the early feasibility of machine learning in emergency communication filtering.
 
-Traditional approaches rely heavily on bag-of-words (BoW) and term frequency–inverse document frequency (TF-IDF) representations~\cite{salton1988term}, which capture lexical frequency features but lack semantic awareness. The introduction of distributed word representations such as \texttt{Word2Vec}~\cite{mikolov2013efficient} and \texttt{GloVe}~\cite{pennington2014glove} enabled models to encode semantic similarity in continuous vector spaces, improving downstream classification accuracy and generalization. 
+Traditional approaches rely heavily on bag-of-words (BoW) and term frequency–inverse document frequency (TF-IDF) representations~\cite{salton1988term}, which capture lexical frequency features but lack semantic awareness. The introduction of distributed word representations such as Word2Vec~\cite{mikolov2013efficient} and GloVe~\cite{pennington2014glove} enabled models to encode semantic similarity in continuous vector spaces, improving downstream classification accuracy and generalization. 
 
-Subsequent deep learning architectures, particularly recurrent networks such as \texttt{LSTM}~\cite{hochreiter1997long} and transformer-based models including \texttt{BERT}~\cite{devlin2019bert} and its compact variant \texttt{DistilBERT}~\cite{sanh2019distilbert}, have further advanced text understanding through contextual embeddings. These models have been shown to outperform classical baselines in various crisis-related NLP benchmarks by leveraging bidirectional context and pretraining on large-scale corpora.
+Subsequent deep learning architectures, particularly recurrent networks such as LSTM~\cite{hochreiter1997long} and transformer-based models including BERT~\cite{devlin2019bert} and its compact variant DistilBERT~\cite{sanh2019distilbert}, have further advanced text understanding through contextual embeddings. These models have been shown to outperform classical baselines in various crisis-related NLP benchmarks by leveraging bidirectional context and pretraining on large-scale corpora.
 
-Beyond classification, several complementary NLP techniques have been successfully applied to crisis informatics. Topic modeling methods, including probabilistic models like Latent Dirichlet Allocation (LDA) and modern embedding-based approaches such as \texttt{BERTopic}~\cite{grootendorst2022bertopic}, have been used to extract latent themes and event clusters from large volumes of social media data during disasters. Similarly, Named Entity Recognition (NER) has proven effective for extracting location, organization, and person entities from unstructured text, enabling geographic triage and coordination support. Sentiment analysis tools such as \texttt{VADER}~\cite{hutto2014vader} and \texttt{TextBlob}~\cite{loria2018textblob} have also been incorporated to quantify emotional tone and urgency within emergency communications.
+Beyond classification, several complementary NLP techniques have been successfully applied to crisis informatics. Topic modeling methods, including probabilistic models like Latent Dirichlet Allocation (LDA) \cite{blei2003latent} and modern embedding-based approaches such as BERTopic~\cite{grootendorst2022bertopic}, have been used to extract latent themes and event clusters from large volumes of social media data during disasters. Similarly, Named Entity Recognition (NER) has proven effective for extracting location, organization, and person entities from unstructured text, enabling geographic triage and coordination support. Sentiment analysis tools such as VADER~\cite{hutto2014vader} and TextBlob~\cite{loria2018textblob} have also been incorporated to quantify emotional tone and urgency within emergency communications.
 
 \section{Methodology}
 
@@ -101,19 +101,21 @@ Beyond classification, several complementary NLP techniques have been successful
 The project implemented a comprehensive end-to-end Natural Language Processing pipeline designed specifically for disaster response message analysis. It is structured around ten distinct tasks that progressed systematically from data acquisition through advanced analysis. The pipeline followed a systematic workflow encompassing data acquisition, preprocessing, feature extraction, model training, evaluation, and multi-faceted insight extraction. The architecture was structured to handle the unique challenges of disaster messages, including short text length, multi-label classification requirements, class imbalance, and the need for interpretable results for emergency responders.
 
 \subsection{Dataset Characteristics and Initial Processing}
-The dataset comprised 26,216 messages collected from real disaster events including earthquakes, floods, and hurricanes, provided through the Kaggle platform ``Disaster Response Messages'' \cite{figureeight2018dataset}. The data was structured across two primary files which are messages containing the raw text and metadata, and categories containing the multi-label annotations across 36 disaster response categories. The dataset showed significant class imbalance, with the ``related'' category containing 20,094 instances while rare categories like ``offer'' had only 118 instances.
+The dataset comprised 26,216 messages collected from real disaster events including earthquakes, floods, and hurricanes, provided through the Kaggle platform ``Disaster Response Messages'' \cite{figureeight2018dataset}. The data was structured across two primary files which are messages containing the raw text and metadata, and categories containing the multi-label annotations across 36 disaster response categories. The dataset showed significant class imbalance, with the \texttt{related} category containing 20,094 instances while rare categories like  \texttt{offer} had only 118 instances.
 
-Initial data quality assessment identified 68 duplicate messages and 32 duplicate category labelings that were removed to prevent data leakage. The ``original'' column contained 16,064 missing values, which were determined to represent messages already in English that didn't require translation. Data quality issue was discovered in the ``related'' column, where 193 instances contained the value ``2'' instead of the expected binary values. After investigation, these were normalized to value ``1'' to maintain consistency. The ``child\_alone'' category was removed entirely as it contained only one unique value, providing no discriminative power for classification.
+Initial data quality assessment identified 68 duplicate messages and 32 duplicate category labelings that were removed to prevent data leakage. The  \texttt{original} column contained 16,064 missing values, which were determined to represent messages already in English that didn't require translation. Data quality issue was discovered in the  \texttt{related} column, where 193 instances contained the value ``2'' instead of the expected binary values. After investigation, these were normalized to value ``1'' to maintain consistency. The  \texttt{child\_alone} category was removed entirely as it contained only one unique value, providing no discriminative power for classification.
 
 \subsection{Text Cleaning and Preprocessing}
 We implemented a text cleaning strategy optimized for traditional machine learning models, recognizing that disaster messages often contain noise from various sources including social media formatting, translation artifacts, and informal communication styles. The preprocessing pipeline employed multiple stages of text normalization and filtering. All text was converted to lowercase to ensure consistency in token matching. A comprehensive regular expression pattern was developed to remove URLs, user mentions, hashtags, numbers, punctuation, and extra whitespace characters that could introduce noise without semantic value for classification.
+
+Regex: \texttt{(https?://\textbackslash S+|https?\textbackslash s\textbackslash S*|www\textbackslash .\textbackslash S+|\textbackslash bhttps?\textbackslash b)|[@\#]\textbackslash w+|\textbackslash d+|[\textasciicircum\textbackslash w\textbackslash s]|\_}
 
 The preprocessing utilized the Natural Language Toolkit (NLTK) \cite{bird2009natural} for linguistic processing. Text was tokenized using the \texttt{word\_tokenize} function to handle contractions and punctuation. Stop words were removed using an English stopword list to eliminate common words. Lemmatization was performed using \texttt{WordNetLemmatizer} \cite{miller1995wordnet} to reduce words to their base forms while preserving meaningful semantic content. The cleaned tokens were stored as lists for flexible downstream processing, with the option to reconstruct sentence representations when needed. This preprocessing approach was specifically designed to handle the dense nature of disaster messages while reducing vocabulary size and computational complexity for subsequent modeling stages.
 
 \subsection{Feature Extraction Methods}
 
 \subsubsection{Text Representation Using Classical Methods}
-We implemented Bag-of-Words (BOW) and TF-IDF representations using \texttt{scikit-learn}'s \texttt{CountVectorizer} and \texttt{TfidfVectorizer} \cite{pedregosa2011scikit}. Both methods employed vocabulary filtering with \texttt{min\_df=5} and \texttt{max\_df=0.95} to eliminate rare and overly common terms, resulting in a refined vocabulary of 6,224 features. The BOW approach captured term frequencies as integer counts, while TF-IDF applied logarithmic scaling to emphasize discriminative terms through inverse document frequency weighting. 
+We implemented Bag-of-Words (BoW) and TF-IDF representations using \texttt{scikit-learn}'s \texttt{CountVectorizer} and \texttt{TfidfVectorizer} \cite{pedregosa2011scikit}. Both methods employed vocabulary filtering with \texttt{min\_df=5} and \texttt{max\_df=0.95} to eliminate rare (hapax) and overly common terms, resulting in a refined vocabulary of 6,224 features. The BoW approach captured term frequencies as integer counts, while TF-IDF applied logarithmic scaling to emphasize discriminative terms through inverse document frequency weighting. 
 
 The TF-IDF score for a term $t$ in a document $d$ is given by:
 \[
@@ -121,20 +123,20 @@ The TF-IDF score for a term $t$ in a document $d$ is given by:
 \]
 where $\text{tf}(t, d)$ is the frequency of term $t$ in document $d$, $\text{df}(t)$ is the number of documents containing $t$, and $N$ is the total number of documents.
 
-We used unigram models (\texttt{ngram\_range=(1,1)}) as preliminary analysis showed limited benefit from higher-order n-grams. All vectorizers were fit on training data (80\% split) to prevent data leakage.
+We used unigram models \texttt{ngram\_range=(1,1)} since preliminary analysis showed limited benefit from higher-order n-grams, and inflated vocabulary size, which impacted the computational time. All vectorizers were fit on training data (80\%--20\% train-test split) to prevent data leakage.
 
 \subsubsection{Word Embedding Representations}
-We trained a custom Word2Vec model using Gensim \cite{mikolov2013efficient} with skip-gram architecture, generating 50-dimensional embeddings with a window size of 5 over 10 training epochs. The model achieved complete vocabulary coverage, capturing all 7,061 terms from our filtered vocabulary. For traditional ML compatibility, we created sense vectors by summing word embeddings per document followed by L2 normalization, producing fixed 50-dimensional sense-carrying vector representations of messages:
+We trained a custom Word2Vec model using Gensim \cite{mikolov2013efficient} with skip-gram architecture, generating 50-dimensional word embeddings with a window size of 5 over 10 training epochs. The model achieved vocabulary coverage of 6,366 terms. For traditional ML compatibility, we created sense vectors by summing word embeddings per document followed by normalization of the result, producing fixed 50-dimensional sense-carrying vector representations of messages:
 
 \[
 \vec{d} = \frac{\sum_{w \in W_d} \vec{w}}{\left\| \sum_{w \in W_d} \vec{w} \right\|_2}
 \]
 
-For sequence models, we implemented zero-padding to create fixed-length sequences of 50 embedding vectors, preserving word order information while maintaining consistent input dimensions across all messages. This dual approach enabled both efficient traditional modeling and sophisticated sequential analysis.
+For sequence models, we implemented truncation to create fixed-length sequences of 50 word embeddings, preserving word order information while maintaining consistent input dimensions across all messages. This dual approach enabled both efficient traditional modeling and sophisticated sequential analysis with LSTM and BERT.
 
 \subsection{Classical Machine Learning Classification}
 
-Further in our pipeline we have applied traditional supervised machine-learning algorithms to perform multi-label classification of messages into 35 target classes using the obtained TF-IDF, BOW vector representations of messages, and dense message embeddings (sense vectors) derived from Word2Vec embeddings as stated in paragraph above. For the training and evaluation of models, the machine learning library \texttt{scikit-learn} \cite{pedregosa2011scikit} was used, which provides all necessary tools. Given that each message may belong to multiple categories, the problem formulation corresponds to multi-label classification, where the overall model comprises $N$ independent binary classifiers, one for each label.
+Further in our pipeline we have applied traditional supervised machine-learning algorithms to perform multi-label classification of messages into 35 target classes using the obtained TF-IDF, BOW vector representations of messages, and dense message embeddings (sense vectors) derived from Word2Vec embeddings as stated in paragraph above. For the training and evaluation of models, the machine learning library scikit-learn \cite{pedregosa2011scikit} was used, which provides all necessary tools. Given that each message may belong to multiple categories, the problem formulation corresponds to multi-label classification, where the overall model comprises $N$ independent binary classifiers, one for each label.
 
 Performance of classical classifiers was examined on each feature set to model the multi-label text classification problem:
 \begin{enumerate}
@@ -147,10 +149,10 @@ A non-linear ensemble baseline was included to compare the performance of tree-b
 \end{enumerate}
 \subsection{Deep Learning Based Classification}
 
-In addition to classical machine learning models, deep learning techniques were explored to examine potential architectural benefits for better semantic and contextual relationship modeling in text messages. Four architectures were implemented and evaluated: (1) A simple dense MLP for TF-IDF and sense vector representations, (2) a bidirectional Long Short-Term Memory (\texttt{LSTM}) recurrent neural network \cite{hochreiter1997long} for word vector sequences from previously pre-trained Word2Vec model, (3) a bidirectional LSTM model with a trainable embedding layer, and (4) a fine-tuned distilled BERT transformer model \cite{sanh2019distilbert}. All models were trained for multi-label text classification, where each message could belong to multiple categories, and using binary cross-entropy loss with evaluation metrics of macro-, micro-, and weighted-F1 scores to account for class imbalance. We have additionally examined LSTM and distilled BERT transformer performance on semi-raw message strings, without stop-word removal and lemmatization applied.
+In addition to classical machine learning models, deep learning techniques were explored to examine potential architectural benefits for better semantic and contextual relationship modeling in text messages. Four architectures were implemented and evaluated: (1) A simple dense MLP for TF-IDF and sense vector representations, (2) a bidirectional Long Short-Term Memory (LSTM) recurrent neural network \cite{hochreiter1997long} for word vector sequences from previously pre-trained Word2Vec model, (3) a bidirectional LSTM model with a trainable embedding layer, and (4) a fine-tuned distilled BERT transformer model \cite{sanh2019distilbert}. All models were trained for multi-label text classification, where each message could belong to multiple categories, and using binary cross-entropy loss with evaluation metrics of macro-, micro-, and weighted-F1 scores to account for class imbalance. We have additionally examined LSTM and distilled BERT transformer performance on semi-raw message strings, without stop-word removal and lemmatization applied.
 
 \subsubsection{Dense Model}
-This baseline deep model extends the classical approach by replacing linear classifiers with a non-linear dense neural network. TF-IDF vectors served as inputs to a multi-layer perceptron (MLP) consisting of two fully connected layers (256 and 128 neurons) with ReLU activation and a dropout rate of 0.2. The output layer used 35 sigmoid-activated neurons to enable multi-label prediction. The model was trained using the Adam optimizer \cite{kingma2015adam} with learning rates between 0.001 and 0.0001, batch sizes of 32--64, and for up to 10 epochs. This architecture primarily served as a baseline to assess whether non-linear transformations over TF-IDF features could improve upon classical SVM and Logistic Regression performance. In addition, we have tested the sense vector representations on this architecture. The model was implemented in TensorFlow.
+This baseline deep model extends the classical approach by replacing linear classifiers with a non-linear dense neural network. TF-IDF vectors served as inputs to a multi-layer perceptron (MLP) consisting of two fully connected layers (256 and 128 neurons) with ReLU activation and a dropout rate of 0.2. The output layer used 35 sigmoid-activated neurons to enable multi-label prediction. The model was trained using the Adam optimizer \cite{kingma2015adam} with learning rates between 0.001 and 0.0001, batch sizes of 32--64, and for up to 10 epochs. This architecture primarily served as a baseline to assess whether non-linear transformations over TF-IDF features could improve upon classical SVM and Logistic Regression performance. In addition, we have tested the sense vector representations on this architecture. The model was implemented in TensorFlow. Model graph is presented below.
 
 \begin{figure}[H]
   \centering
@@ -160,7 +162,7 @@ This baseline deep model extends the classical approach by replacing linear clas
 \end{figure}
 
 \subsubsection{biLSTM Model}
-To capture semantic meaning and word-level context, a BiLSTM model was implemented using 50-dimensional pre-trained Word2Vec embeddings. The model architecture included a bidirectional LSTM layer with 128 hidden units in each direction, followed by a dense layer of 128 neurons and a dropout of 0.3. The output layer again consisted of 35 sigmoid-activated neurons. The model was implemented in TensorFlow.
+To capture semantic meaning and word-level context, a BiLSTM model was implemented using 50-dimensional pre-trained Word2Vec embeddings. The model architecture included a bidirectional LSTM layer with 128 hidden units in each direction, followed by a dense layer of 128 neurons and a dropout of 0.3. The output layer again consisted of 35 sigmoid-activated neurons. The model was implemented in TensorFlow. Model graph is presented below.
 
 \begin{figure}[H]
   \begin{center}
@@ -171,7 +173,7 @@ To capture semantic meaning and word-level context, a BiLSTM model was implement
 \end{figure}
 
 \subsubsection{Trainable Embeddings + biLSTM Model}
-A second BiLSTM variant was developed with a randomly initialized embedding layer that was fully trainable during model optimization. The embedding size was set to 50, with the same sequence length of 50 tokens, and the vocabulary size for the embedding matrix was set to 8000 with BiLSTM dimensions of 128 units per direction. This model allows the embeddings to adapt to the task-specific vocabulary. The model was implemented in TensorFlow.
+A second BiLSTM variant was developed with a randomly initialized embedding layer that was fully trainable during model optimization. The embedding size was set to 50, with the same sequence length of 50 tokens, and the vocabulary size for the embedding matrix was set to 8000 with BiLSTM dimensions of 128 units per direction. This model allows the embeddings to adapt to the task-specific vocabulary. The model was implemented in TensorFlow. Graph is presented below.
 
 \begin{figure}[H]
   \begin{center}
@@ -182,23 +184,23 @@ A second BiLSTM variant was developed with a randomly initialized embedding laye
 \end{figure}
 
 \subsubsection{Distilled BERT Transformer}
-To improve the model’s understanding of semantic nuances and contextual relationships, a DistilBERT transformer model was fine-tuned for multi-label classification. DistilBERT is a 66-million parameter version derived from BERT through knowledge distillation, which retains much of BERT’s linguistic understanding while being more computationally efficient and faster to train \cite{sanh2019distilbert}. Each message was tokenized using the DistilBERT tokenizer with a maximum sequence length set to 50. Instead of the [CLS] token for classification, we have employed mean pooling—the average of all token embeddings in the final hidden layer—as it was giving more stable results. This pooled embedding was passed through a dropout layer (rate 0.3), a dense layer of 256 neurons with ReLU activation, and finally a 35-neuron sigmoid output layer. Training was performed with the AdamW optimizer with learning rate $2\times10^{-5}$, batch size 64, and 10 epochs. The model was trained and customized in PyTorch.
+To improve the model’s understanding of semantic nuances and contextual relationships, a DistilBERT transformer model was fine-tuned for multi-label classification. DistilBERT is a 66-million parameter version derived from BERT through knowledge distillation, which retains much of BERT’s linguistic understanding while being more computationally efficient and faster to train \cite{sanh2019distilbert}. Each message was tokenized using the DistilBERT tokenizer with a maximum sequence length set to 50 using truncation. Instead of the \texttt{[CLS]} token for classification, we have employed mean pooling, the average of all token embeddings in the final hidden layer, as it was giving more stable results. This pooled embedding was passed through a dropout layer (rate 0.3), a dense layer of 256 neurons with ReLU activation, and finally a 35-neuron sigmoid output layer. Training was performed with the AdamW optimizer with learning rate $2\times10^{-5}$, batch size 64, and 10 epochs. The model was trained and customized in PyTorch.
 
 \subsection{Named Entity Recognition}
 
-For Named Entity Recognition, we employed spaCy's pre-trained \texttt{en\_core\_web\_sm} model \cite{spacy2}. The pipeline processed all 26,216 cleaned texts, with entity extraction performed in batches of 64 using multiprocessing to leverage available CPU cores. We extracted standard entity types including GPE (Geopolitical Entities), DATE, TIME, ORG (Organizations), PERSON, and various numerical entities. The NER system was configured to process the cleaned text versions, recognizing that our preprocessing might affect entity recognition performance by removing capitalization and punctuation cues that spaCy's model typically leverages. 
+For Named Entity Recognition, we employed spaCy's pre-trained \texttt{en\_core\_web\_sm} model \cite{spacy2}. The pipeline processed all 26,216 cleaned texts, with entity extraction performed in batches of 64 using multiprocessing to leverage available CPU cores. We extracted standard entity types including \texttt{GPE} (Geopolitical Entities), \texttt{DATE}, \texttt{TIME}, \texttt{ORG} (Organizations), \texttt{PERSON}, and various numerical entities. The NER system was configured to process the cleaned text versions, recognizing that our preprocessing might affect entity recognition performance by removing capitalization and punctuation cues that spaCy's model typically leverages. 
 
-We implemented comprehensive entity frequency analysis across the entire corpus and developed sampling strategies to identify messages with rich entity content for qualitative analysis. The system also supported entity visualization using spaCy's \texttt{displaCy} library for manual inspection and validation of extraction quality.
+We implemented comprehensive entity frequency analysis across the entire corpus and developed sampling strategies to identify messages with rich entity content for qualitative analysis. The system also supported entity visualization using spaCy's \texttt{displaCy} module for manual inspection and validation of extraction quality.
 
 \subsection{Topic Modeling}
 
-We implemented two distinct topic modeling approaches: traditional Latent Dirichlet Allocation (LDA) and modern BERTopic. For LDA, we used the \texttt{CountVectorizer} with the same parameters as the classification pipeline (\texttt{min\_df=5}, \texttt{max\_df=0.95}) to create the document-term matrix. LDA was trained with 10 topics using the \texttt{scikit-learn} implementation with \texttt{random\_state=42} for reproducibility and \texttt{max\_iter=10} for computational efficiency \cite{blei2003latent}.
+We implemented two distinct topic modeling approaches: traditional Latent Dirichlet Allocation (LDA) and modern BERTopic. For LDA, we used the \texttt{CountVectorizer} with the same parameters as the classification pipeline (\texttt{min\_df=5}, \texttt{max\_df=0.95}) to create the document-term matrix. LDA was trained with 10 topics using the scikit-learn's implementation \texttt{LatentDirichletAllocation} with \texttt{random\_state=42} for reproducibility and \texttt{max\_iter=10} for computational efficiency \cite{blei2003latent}.
 
 BERTopic employed a more sophisticated pipeline using sentence transformers for document embeddings, UMAP for dimensionality reduction, and KMeans for clustering \cite{grootendorst2022bertopic}. We configured UMAP with \texttt{n\_neighbors=15}, \texttt{n\_components=5}, and \texttt{min\_dist=0.001} to preserve local structure while reducing dimensionality. Instead of HDBSCAN, we used KMeans with 10 clusters for more controlled topic count. The \texttt{top\_n\_words} parameter was set to 15 for detailed topic interpretation, and the model was configured to automatically reduce topics to the specified count.
 
 \subsection{Sentiment Analysis}
 
-For sentiment analysis, we implemented two complementary approaches: VADER (Valence Aware Dictionary and sEntiment Reasoner) and TextBlob. VADER is specifically optimized for social media text and short messages \cite{hutto2014vader}. We applied VADER's \texttt{polarity\_scores} method to extract compound sentiment scores, with threshold-based labeling (positive: $\ge 0.05$, negative: $\le -0.05$, neutral: between). 
+For sentiment analysis, we implemented two complementary approaches: VADER (Valence Aware Dictionary and Sentiment Reasoner) and TextBlob. VADER is specifically optimized for social media text and short messages \cite{hutto2014vader}. We applied VADER's \texttt{polarity\_scores} method to extract compound sentiment scores, with threshold-based labeling (positive: $\ge 0.05$, negative: $\le -0.05$, neutral: between). 
 
 TextBlob provided an alternative lexicon-based approach using its \texttt{pattern} library sentiment analysis \cite{loria2018textblob}. We extracted polarity scores ranging from most negative to most positive, with binary thresholding at zero for label assignment. Both systems processed the cleaned text versions, allowing direct comparison of their sensitivity to the same input representations. 
 
@@ -208,14 +210,14 @@ We implemented comprehensive aggregation of sentiment scores by disaster categor
 
 \subsection{Data Characteristics and Class Distribution}
 
-The final dataset contains 26,216 messages across 35 categories after data cleaning and preprocessing. A severe class imbalance was observed, with the \texttt{related} category dominating, followed by \texttt{aid\_related} and \texttt{weather\_related}. In contrast, critical but rare categories such as \texttt{search\_and\_rescue}, \texttt{fire}, and \texttt{missing\_people} contained only a few hundred instances each. 
+The final dataset contained 26,216 messages across 35 categories after data cleaning and preprocessing. A severe class imbalance was observed, with the \texttt{related} category dominating, followed by \texttt{aid\_related} and \texttt{weather\_related}. In contrast, critical but rare categories such as \texttt{search\_and\_rescue}, \texttt{fire}, and \texttt{missing\_people} contained only a few hundred instances each. 
 
-A histogram of categories per message revealed the inherently multi-label nature of the problem. Most messages were assigned to either zero or one category, while a smaller subset contained multiple simultaneous labels, reflecting the complex, overlapping semantics of real-world disaster communication.
+A histogram of categories per message revealed the inherently multi-label nature of the problem. Reflecting the complex, overlapping semantics of real-world disaster communication. 20\% of dataset messages were not assigned to any category, those are messages which are marked as \textbf{not} \texttt{related}, and about 20\% more of dataset is assigned only to disaster \texttt{related} but miss any other specifying category label, also five top category labels: \texttt{related}, \texttt{aid\_related}, \texttt{weather\_related}, \texttt{direct\_report}, \texttt{request}, \texttt{other\_aid} correspond to about half of category markings. About 40\% of messages is marked to \texttt{aid\_related} and about 25\% is \texttt{weather\_related}, so we definitely see that there are two dominant specifiying categories.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\textwidth]{figures/category_frequencies.png}
-  \caption{Horizontal bar chart of top 10 category frequencies}
+  \caption{Bar chart of top 10 category frequencies}
   \label{fig:cat_freq}
 \end{figure}
 
@@ -226,7 +228,7 @@ A histogram of categories per message revealed the inherently multi-label nature
   \label{fig:cat_per_message}
 \end{figure}
 
-This imbalance and sparsity motivated the use of evaluation metrics that are robust to class imbalance, such as the macro- and weighted-F1 scores, and justified additional analysis of the ``related`` class as a potential confounder in downstream classification tasks.
+This imbalance and sparsity motivated the use of evaluation metrics that are robust to class imbalance, such as the macro- and weighted-F1 scores, and justified additional analysis of the \texttt{related} class as a potential confounder in downstream classification tasks.
 
 \subsection{Text Cleaning and Preprocessing Results}
 
@@ -266,7 +268,7 @@ These preprocessing results demonstrate substantial noise reduction, vocabulary 
 
 \subsection{Task 3: Feature Space Analysis}
 
-Bag-of-Words and TF-IDF vectorizers produced 6,224 features after filtering (\texttt{min\_df=5}, \texttt{max\_df=0.95}), creating sparse matrices of dimensions 20,972~$\times$~6,224. Frequency analysis identified top terms: \texttt{water} (3,039), \texttt{people} (3,013), \texttt{food} (2,902), \texttt{help} (2,650), \texttt{need} (2,491). Word2Vec trained 50-dimensional embeddings for 6,366 terms using skip-gram architecture. Message length analysis showed 99\% of messages contained fewer than 50 tokens (median: 12 tokens). PCA visualization of embeddings revealed semantic clustering of related disaster terms.
+Bag-of-Words and TF-IDF vectorizers produced 6,224 features after filtering (\texttt{min\_df=5}, \texttt{max\_df=0.95}), creating sparse matrices of dimensions 20,972~$\times$~6,224 (20,972 is amount of documents in train set). Frequency analysis identified top terms: \texttt{water} (3,039), \texttt{people} (3,013), \texttt{food} (2,902), \texttt{help} (2,650), \texttt{need} (2,491). Word2Vec trained 50-dimensional embeddings for 6,366 terms using skip-gram architecture. Message length analysis showed 99\% of messages contained fewer than 50 tokens (median: 12 tokens). PCA visualization of embeddings revealed semantic clustering of related disaster terms.
 
 \begin{figure}[H]
   \centering
@@ -291,9 +293,9 @@ Bag-of-Words and TF-IDF vectorizers produced 6,224 features after filtering (\te
 
 \subsection{Machine Learning Classification}
 
-Among the tested models, linear classifiers (SVM and Logistic Regression) demonstrated the strongest performance and generalization capability across feature representations. Both achieved macro-F1 scores in the range of 0.40-0.45 and weighted-F1 around 0.60-0.65, indicating consistent performance across both frequent and infrequent classes. In contrast, the Random Forest classifier underperformed significantly, with macro-F1 values between 0.10-0.20, reflecting its limited ability to learn from high-dimensional, sparse text features.
+Among the tested models, linear classifiers (SVM and Logistic Regression) demonstrated the strongest performance and generalization capability across feature representations. Both achieved macro-F1 scores in the range of 0.40--0.45 and weighted-F1 around 0.60--0.65, indicating consistent performance across both frequent and infrequent classes. In contrast, the Random Forest classifier underperformed significantly, with macro-F1 values between 0.10--0.20, reflecting its limited ability to learn from high-dimensional, sparse text features.
 
-BoW features slightly outperformed TF-IDF counts across linear models, typically improving F1 scores by 0.01-0.02. Conversely, the sense vector embeddings (50-dimensional dense representations) led to a noticeable drop in performance across all models in classification of rare labels, while getting a slight gain 0.01-0.02 in common ones, likely due to excessive compression of message semantics and loss of category-specific lexical cues. A brief summary of classification results is presented on the heatmap of F1-scoring types across features and models.
+BoW features slightly outperformed TF-IDF counts across linear models, typically improving F1 scores by 0.01--0.02. Conversely, the sense vector embeddings (50-dimensional dense representations) led to a noticeable drop in performance across all models in classification of rare labels, while getting a slight gain 0.01--0.02 in common ones, likely due to excessive compression of message semantics and loss of category-specific lexical cues. A brief summary of classification results is presented on the heatmap of F1-scoring types across features and models.
 
 \begin{figure}[H]
   \centering
@@ -468,7 +470,7 @@ Despite its simplicity, the Logistic Regression model demonstrated stable result
 
 The Random Forest classifier was optimized with $n\_{{estimators}} \in \{200, 300\}$, minimal split size $\text{min\_samples\_split} \in \{2, 5, 10\}$, and leaf size $\text{min\_samples\_leaf} \in \{2, 5\}$, with class balancing enabled. Even with balancing, performance remained notably weaker than for linear models. The BoW + RF combination achieved a macro-F1 of approximately 0.26 and a weighted-F1 of 0.53, while TF-IDF and dense sense-vector inputs yielded similar or slightly lower results.
 
-Random Forests tended to overfit the training data, producing inflated recall but poor precision for dominant categories and failing to generalize to minority classes. These findings confirm that tree-based ensembles are not well suited to highly sparse, high-dimensional textual feature spaces typical of disaster-response message data.
+Random Forest tended to overfit the training data, producing inflated recall but poor precision for dominant categories and failing to generalize to minority classes. These findings confirm that tree-based ensembles are not well suited to highly sparse, high-dimensional textual feature spaces typical of disaster-response message data.
 
 \section{Deep Learning classification}
 
@@ -498,7 +500,7 @@ Random Forests tended to overfit the training data, producing inflated recall bu
 \end{figure}
 
 After 5 training epochs, the model reached a validation AUC of 0.84, after the second epoch model was starting to overfit training data.  
-Result analysis showed strong performance on dominant labels such as \texttt{related} with F1 of 0.89, \texttt{aid\_related} of 0.73, \texttt{food} 0.76, and \texttt{weather\_related} 0.75. Macro-F1 and weighted-F1 scores were approximately 0.38 and 0.63, respectively — nearly matching the classical SVM baseline. Smaller or infrequent categories (e.g., \texttt{hospitals}, \texttt{tools}, \texttt{shops}) remained challenging, with precision and recall near zero due to limited positive samples.  
+Result analysis showed strong performance on dominant labels such as \texttt{related} with F1 of 0.89, \texttt{aid\_related} of 0.73, \texttt{food} 0.76, and \texttt{weather\_related} 0.75. Macro-F1 and weighted-F1 scores were approximately 0.38 and 0.63, respectively, nearly matching the classical SVM baseline. Smaller or infrequent categories (e.g., \texttt{hospitals}, \texttt{tools}, \texttt{shops}) remained challenging, with precision and recall near zero due to limited positive samples.  
 These results suggest that TF-IDF features capture sufficient lexical signal for linear and shallow nonlinear models, effectively modeling category-specific word patterns.
 
 \subsection{Dense Model on Sense Embeddings}
@@ -526,7 +528,7 @@ These results suggest that TF-IDF features capture sufficient lexical signal for
   \label{fig:dense_sense}
 \end{figure}
 
-In this case model training didn’t show any signs of overfitting after training for 10 epochs. When applied to low-dimensional sense vectors (50-dimensional), the same dense network demonstrated moderate performance, reaching a validation AUC of 0.85 but with lower practical F1-scores (macro-F1 of 0.30, micro-F1 of 0.65). Frequent categories like related, \texttt{aid\_related}, and \texttt{weather\_related} were still correctly predicted, but rarer categories deteriorated sharply, confirming that the compact dense representations were too compressed for complex multi-label classification. 
+In this case model training didn’t show any signs of overfitting after training for 10 epochs. When applied to low-dimensional sense vectors (50-dimensional), the same dense network demonstrated moderate performance, reaching a validation AUC of 0.85 but with lower practical F1-scores (macro-F1 of 0.30, micro-F1 of 0.65). Frequent categories like related, \texttt{aid\_related}, and \texttt{weather\_related} were still correctly predicted, but rarer categories deteriorated sharply, confirming that the compact dense representations were too compressed for complex multi-label classification task. 
 
 \subsection{BiLSTM on Word2Vec Embeddings}
 
@@ -553,8 +555,8 @@ In this case model training didn’t show any signs of overfitting after trainin
   \label{fig:bilsmw2v}
 \end{figure}
 
-A bidirectional LSTM network using pre-trained Word2Vec embeddings achieved a validation AUC of 0.84 after 10 epochs, indicating good representational learning. However, F1-scores remained worse comparable to the dense model: macro-F1 of 0.30, micro-F1 of 0.66, and weighted-F1 of 0.60. Although the recurrent layers captured some temporal dependencies, they did not yield any improvements — largely because the majority of messages were short (often fewer than 15 tokens), limiting sequential information available for the LSTM to exploit.  
-Performance was strong for high-frequency labels (\texttt{related}, \texttt{aid\_related}, \texttt{weather\_related}) but inconsistent for rare categories, mirroring the imbalance observed in data preprocessing phase.
+A bidirectional LSTM network using pre-trained Word2Vec embeddings achieved a validation AUC of 0.84 after 10 epochs, indicating good representational learning. However, F1-scores remained worse comparable to the dense model: macro-F1 of 0.30, micro-F1 of 0.66, and weighted-F1 of 0.60. Although the recurrent layers captured some temporal dependencies, they did not yield any improvements, largely because the majority of messages were short (often fewer than 12 tokens), limiting sequential information available for the LSTM's recurrent layers to exploit.  
+Performance was strong for high-frequency labels (\texttt{related}, \texttt{aid\_related}, \texttt{weather\_related}) but inconsistent for rare categories, mirroring the imbalance observed in data analysis phase.
 
 \subsection{BiLSTM with Trainable Embeddings}
 
@@ -584,7 +586,7 @@ Performance was strong for high-frequency labels (\texttt{related}, \texttt{aid\
 
 Introducing a trainable embedding layer (vocabulary size of 8000, embedding dimension of 50) did not improve overall generalization. Despite achieving a training AUC of 0.88, validation AUC plateaued at 0.79 with rising loss, indicating overfitting after 5 epochs. The model’s macro-F1 dropped to 0.24 and weighted-F1 to 0.57, with many minority classes completely unrecognized. This underperformance is attributed to the relatively small dataset and short input lengths, which hindered the model’s ability to learn word embeddings from scratch. The results highlight that training embeddings without external pre-training is ineffective for low-resource, short-text datasets.
 
-In addition we have examined the lighter text cleaning variant before tokenization, that is excluding the lemmatization and stop word removal phase.
+In addition we have examined the lighter text cleaning variant before tokenization, that is excluding the lemmatization and stop-word removal phase.
 
 \begin{table}[H]
   \caption{Results of trainable embeddings with BiLSTM with light text preprocessing}
@@ -609,9 +611,11 @@ In addition we have examined the lighter text cleaning variant before tokenizati
   \label{fig:bilsm_trainble}
 \end{figure}
 
-No significant difference was observed in this case as well.
+No significant difference was observed.
 
 \subsection{DistilBERT Transformer}
+
+It is important to state that we have employed \texttt{distilbert-base-uncased}, which is non-case sensitive \cite{distilbert_base_uncased_hf}.
 
 \begin{table}[H]
   \caption{DistilBERT results}
@@ -638,11 +642,15 @@ No significant difference was observed in this case as well.
 
 During training, the model exhibited smooth convergence until epoch 5 and then started overfitting, which is seen from binary cross-entropy loss graph for training and evaluation samples, finishing with the validation AUC of 0.83.
 
-The final evaluation yielded a macro-F1 of 0.32, micro-F1 of 0.69, and weighted-F1 of 0.64, indicating strong performance on dominant categories and poor generalization across others. High precision and recall were achieved for frequent categories such as \texttt{related} (F1 0.90), \texttt{aid\_related} (F1 0.75), \texttt{food} (F1 0.81), and \texttt{weather\_related} (F1 0.80). However, categories with limited examples—such as \texttt{tools}, \texttt{hospitals}, \texttt{shops}, and \texttt{aid\_centers} — were rarely detected (F1 0.00), consistent with severe class imbalance in the dataset. Mid-frequency classes (\texttt{medical\_help}, \texttt{refugees}, \texttt{transport}) achieved partial recognition with F1 scores between 0.3 and 0.5.  
+The final evaluation yielded a macro-F1 of 0.32, micro-F1 of 0.69, and weighted-F1 of 0.64, indicating strong performance on dominant categories and poor generalization across others. High precision and recall were achieved for frequent categories such as \texttt{related} (F1 0.90), \texttt{aid\_related} (F1 0.75), \texttt{food} (F1 0.81), and \texttt{weather\_related} (F1 0.80). However, categories with limited examples such as \texttt{tools}, \texttt{hospitals}, \texttt{shops}, and \texttt{aid\_centers}, were rarely detected (F1 0.00), consistent with severe class imbalance in the dataset, and short document length. Mid-frequency classes (\texttt{medical\_help}, \texttt{refugees}, \texttt{transport}) achieved partial recognition with F1 scores between 0.3 and 0.5.  
 
-AUC curves and per-class confusion matrices confirmed that the model effectively captured semantic relations for distinguishing disaster related and non-related messages, although it can’t properly specify any other disaster-related categories for such messages. 
+AUC curve and per-class confusion matrices confirmed that the model effectively captured semantic relations for distinguishing disaster related and non-related messages, although it can’t properly specify any other disaster-related categories for such messages. 
 
-A key observation is that aggressive text preprocessing degraded DistilBERT’s performance relative to its potential. As the transformer was pretrained on raw, case-sensitive text, the lack of stop-words, punctuation, capitalization in addition with lemmatization removed valuable syntactic and semantic cues, shortening inputs and reducing the richness of contextual information available during fine-tuning. That was further examined in the example below, when we have removed the step of stop-word removal and lemmatization from text preprocessing.
+In addition it was decided to examine the transformer performance on the lighter text cleaning, as the transformer was pretrained on almost raw text (we have used uncased-variant), the lack of stop-words, punctuation along with lemmatization removed valuable syntactic and semantic cues, shortening inputs and reducing the richness of contextual information available during fine-tuning. That was further examined in the example below, when we have removed the step of stop-word removal and lemmatization from text preprocessing.
+
+The sequence length in general is the key for better contextual modeling, even for state-of-art architectures it is diffucult to deduce mutliple categories from very short sequences, and it is the main problem of this dataset.
+
+A slight improvement was noticed in comparison with previous text preprocessing variant as well as slightly more stable training graph, though it anyway started to overfit around 5th epoch.
 
 \begin{table}[H]
   \caption{DistilBERT on light text cleaning}
@@ -660,6 +668,7 @@ A key observation is that aggressive text preprocessing degraded DistilBERT’s 
   \end{tabular}
 \end{table}
 
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\textwidth]{figures/distilbert_light.png}
@@ -667,11 +676,11 @@ A key observation is that aggressive text preprocessing degraded DistilBERT’s 
   \label{fig:distilbert_light}
 \end{figure}
 
-We can see an improvement in comparison with previous text preprocessing variant as well as a more stable training graph. These experiments highlight the sensitivity of transformer and vector sequence models in general to text preprocessing. While classical ML models often benefit from normalization and token simplification, pretrained transformers depend on intact linguistic structure. Restoring some features improved both recall and overall F1-scores, confirming that minimal preprocessing yields better alignment with DistilBERT’s learned language patterns.
+These experiments highlight the sensitivity of transformer and vector sequence models in general to text preprocessing. While classical ML models often benefit from normalization and token simplification, pretrained transformers depend on intact linguistic structure. Restoring some features improved both recall and overall F1-scores, confirming that minimal preprocessing yields better alignment with DistilBERT’s learned language patterns.
 
 \section{Named Entity Recognition Results}
 
-The NER process successfully identified key entities across the corpus. A frequency analysis confirmed that the most common entity types were highly relevant to disaster response: \texttt{GPE} (Geopolitical Entities), \texttt{Date}, and \texttt{Org} (Organizations). Sample extractions from messages highlighted the model's ability to pinpoint locations, timings, and organizations, such as \texttt{"haiti [GPE]"}, \texttt{"tomorrow [DATE]"}, and \texttt{"radio nirvana [ORG]"}.
+The NER process successfully identified key entities across the corpus. A frequency analysis confirmed that the most common entity types were highly relevant to disaster response: \texttt{GPE} (Geopolitical Entities), \texttt{DATE}, and \texttt{ORG} (Organizations). Sample extractions from messages highlighted the model's ability to pinpoint locations, timings, and organizations, such as \texttt{"haiti [GPE]"}, \texttt{"tomorrow [DATE]"}, and \texttt{"radio nirvana [ORG]"}.
 
 \begin{figure}[H]
   \centering
@@ -687,7 +696,7 @@ The NER process successfully identified key entities across the corpus. A freque
   \label{fig:ner_displacy}
 \end{figure}
 
-The prevalence of location (\texttt{GPE}) and organization (\texttt{ORG}) entities provides direct, actionable data for emergency routing and coordination. The model did produce some noise, particularly in the \texttt{Person} entity type, but overall proved highly effective at extracting the most critical information types.
+The prevalence of location (\texttt{GPE}) and organization (\texttt{ORG}) entities provides direct, actionable data for emergency routing and coordination. The model did produce some noise, particularly in the \texttt{PERSON} entity type, but overall proved highly effective at extracting the most critical information types.
 
 \section{Topic Modeling Analysis}
 
@@ -711,7 +720,7 @@ The two methods offer complementary value: LDA provides a high-level thematic su
 
 \section{Sentiment Analysis Findings}
 
-The sentiment analysis revealed a complex emotional landscape. VADER, sensitive to intense language, classified the majority of messages as negative. TextBlob, a more general-purpose tool, showed a more balanced distribution, identifying both positive and neutral sentiments. Analysis by category revealed a clear pattern: categories describing damage and loss (e.g., \texttt{death}, \texttt{military}) had strongly negative sentiment, while those related to aid and support (e.g., \texttt{offer}, \texttt{money}) had positive sentiment.
+The sentiment analysis revealed a complex emotional landscape. VADER, sensitive to intense language, classified the majority of messages as positive. TextBlob, a more general-purpose tool, showed a more balanced distribution, identifying both positive and neutral sentiments. Analysis by category revealed a clear pattern: categories describing damage and loss (e.g., \texttt{death}, \texttt{military}) had strongly negative sentiment, while those related to aid and support (e.g., \texttt{offer}, \texttt{money}) had positive sentiment.
 
 \begin{figure}[H]
   \centering
@@ -727,36 +736,36 @@ The sentiment analysis revealed a complex emotional landscape. VADER, sensitive 
   \label{fig:sentiment_heatmap}
 \end{figure}
 
-VADER is likely more accurate in capturing the urgency and distress inherent in crisis communications. The strong correlation between sentiment and category provides an additional, crucial dimension for triage, flagging messages in high-negative sentiment categories as particularly urgent.
+Sentiment analysis shows that disaster communication tends to be neutral to slightly positive overall, driven by coordination, aid, and requests for help, with pockets of strong negativity in damage- or fatality-related categories. VADER detects sharper emotional polarity, while TextBlob tends toward moderation. Together, they show a consistent thematic divide between damage-focused (negative) and aid-focused (positive) messages. VADER is likely more accurate in capturing the urgency and distress inherent in crisis communications. The strong correlation between sentiment and category provides an additional, crucial dimension for triage, flagging messages in high-negative sentiment categories as particularly urgent.
 
 \section{Methodological Limitations}
 
-The project faced several limitations. The aggressive text cleaning, while beneficial for traditional machine learning, removed capitalization cues that aid Named Entity Recognition (NER) and may have reduced the performance of deep learning models. The short length of messages limited the amount of contextual information available for sequential models such as LSTMs. The severe multi-label class imbalance meant that models struggled to learn rare categories — an issue that would require more advanced techniques, such as data augmentation or cost-sensitive learning, beyond the scope of this pipeline.
+The project faced several limitations. The aggressive text cleaning, while beneficial for traditional machine learning, has removed capitalization cues that might aided Named Entity Recognition (NER). It, as well, have reduced the performance of deep learning models. Furthermore, the nature of messages of being short in length limited the amount of contextual information available for sequential models such as LSTMs and Transformers. In addition, severe multi-label class imbalance meant that models struggled to learn rare categories which is an issue that would require more advanced techniques, such as data augmentation or cost-sensitive learning, beyond the scope of this pipeline.
 
 \section{Practical Implications for Disaster Response}
 
-The implemented pipeline provides multiple actionable components for emergency response. Traditional machine learning models, such as \texttt{LinearSVC} with TF-IDF features, offer a robust and efficient method for automatic message categorization. Named Entity Recognition (NER) enables the extraction of entities such as \texttt{GPE} (locations), \texttt{DATE}, and \texttt{ORG}, which support geographic triage and coordination efforts. Sentiment Analysis adds a layer of urgency estimation by distinguishing negative from positive emotional tone to assist in prioritization. Furthermore, Topic Modeling methods such as LDA and BERTopic summarize public concerns and emerging discussion themes, supporting strategic decision-making. 
+The implemented pipeline provides multiple actionable components for emergency response. Traditional machine learning models, such as Support Vector Machine (SVM) with BoW or TF-IDF features, offer a robust and efficient method for automatic message categorization. Named Entity Recognition (NER) enables the extraction of entities such as \texttt{GPE} (locations), \texttt{DATE}, and \texttt{ORG}, which support geographic triage and coordination efforts. Sentiment Analysis adds a layer of urgency estimation by distinguishing negative from positive emotional tone to assist in prioritization. Furthermore, Topic Modeling methods such as LDA and BERTopic summarize public concerns and emerging discussion themes, supporting strategic decision-making. 
 
 Together, these integrated tools can significantly reduce the manual burden on emergency operators, enhance real-time situational awareness, and improve the overall efficiency of information processing during disaster response scenarios.
 
 \section{Discussion}
 
-The aggressive cleaning strategy effectively prepared text for traditional machine learning by reducing noise and dimensionality. However, this approach represented a trade-off that removed structural features (punctuation, capitalization) valuable for transformer-based models and Named Entity Recognition (NER). 
+The aggressive cleaning strategy effectively prepared text for traditional machine learning by reducing noise and dimensionality. However, this approach represented a trade-off that removed structural features (punctuation, capitalization, stop-words) valuable for reccurent and transformer-based models, as well as, Named Entity Recognition (NER). 
 
 In addition, traditional feature representations effectively captured the disaster-specific lexicon, while embeddings learned semantic relationships. The vocabulary size difference between vectorizers (6,224) and Word2Vec (6,366) indicated that the embedding model captured additional morphological variants. The short message length characteristic fundamentally constrained sequential model design.
 
-The linear dense network trained on TF-IDF features achieved the most balanced performance, with a macro-F1 score around 0.38 and a micro-F1 near 0.67, followed by \texttt{DistilBERT}. Models built on \texttt{Word2Vec} embeddings or trainable embedding layers underperformed, largely due to the dataset’s short message lengths, small vocabulary, and class imbalance. The \texttt{LSTM} architecture did not provide any advantage, as most messages contained few tokens after cleaning, offering little sequential information for the recurrent layers — the same limitation also applied to transformer-based architectures such as \texttt{DistilBERT}. Additionally, training word embeddings from scratch on such a small corpus led to fast overfitting and weak generalization to rare labels.
+The linear dense network trained on TF-IDF features achieved the most balanced performance among deep architectures, with a macro-F1 score around 0.38 and a micro-F1 near 0.67, followed by DistilBERT. Models built on Word2Vec embeddings or trainable embedding layers underperformed, largely due to the dataset’s short message lengths, small vocabulary, and class imbalance. The LSTM architecture did not provide any advantage, as most messages contained few tokens after cleaning, offering little sequential information for the recurrent layers, the same limitation also applied to transformer-based architectures such as DistilBERT. Additionally, training word embeddings from scratch either using Word2Vec or trainable embedding layers on such a small corpus led to fast overfitting and weak generalization to rare labels.
 
-While classification was the primary analytical focus, auxiliary modules — Named Entity Recognition (NER), Sentiment Analysis, and Topic Modeling added interpretive depth to the system. The spaCy-based NER module effectively extracted geographic (\texttt{GPE}) and organizational (\texttt{ORG}) entities, yielding structured, actionable information for identifying key locations and actors in disaster communications. Despite minor noise in \texttt{Person}-type entities, it demonstrated strong potential for automated tagging in real-world response pipelines. Sentiment Analysis using \texttt{VADER} and \texttt{TextBlob} introduced an emotional dimension, with \texttt{VADER} capturing urgency and distress—particularly in \texttt{death} and \texttt{military} messages—while \texttt{TextBlob} produced smoother polarity trends. The alignment between sentiment and disaster categories suggests sentiment cues can help prioritize urgent communications.
-Topic Modeling with LDA and \texttt{BERTopic} uncovered latent structures within the corpus. LDA identified broad themes such as basic need and infrastructure damage, whereas \texttt{BERTopic} revealed specific, event-driven clusters like Hurricane Sandy and requests for help.
+For short, noisy posts and small datasets, classical linear models over BoW and TF-IDF remain a strong baseline, outrperforming Deep Models in this study. These models offer interpretability, efficiency, and resilience to class imbalance, all of which are critical for real-world disaster response systems. While deep architectures show promise in learning semantic and contextual relations, they require larger and more diverse data to reach their potential.
 
-For short, noisy posts and small datasets, classical linear models over BoW and TF-IDF remain a strong baseline. These models offer interpretability, efficiency, and resilience to class imbalance, all of which are critical for real-world disaster response systems. While deep architectures show promise in learning semantic and contextual relations, they require larger and more diverse data to reach their potential. Furthermore, integrating interpretive layers such as NER, sentiment, and topic modeling enhances the pipeline’s overall analytical depth, transforming raw message classification into a comprehensive framework for actionable disaster intelligence.
+Auxiliary modules, which are Named Entity Recognition (NER), Sentiment Analysis, and Topic Modeling added interpretive depth to the system. The spaCy-based NER module effectively extracted geographic (\texttt{GPE}) and organizational (\texttt{ORG}) entities, yielding structured, actionable information for identifying key locations and actors in disaster communications. Despite minor noise in \texttt{PERSON}-type entities, it demonstrated strong potential for automated tagging in real-world response pipelines. Sentiment Analysis using VADER and TextBlob introduced an emotional dimension, with VADER capturing urgency and distress particularly in \texttt{death} and \texttt{military} messages, while TextBlob produced smoother polarity trends. The alignment between sentiment and disaster categories suggests sentiment cues can help prioritize urgent communications.
+Topic Modeling with LDA and BERTopic uncovered latent structures within the corpus. LDA identified broad themes such as basic need and infrastructure damage, whereas BERTopic revealed specific, event-driven clusters like Hurricane Sandy and requests for help.
 
 \section{Conclusion}
 
 This project implemented a complete natural language processing pipeline for disaster response message classification, including data cleaning, feature extraction, classical and deep learning classification, as well as complementary analyses. 
 
-Across all experiments, traditional machine learning models, particularly \texttt{LinearSVC} with TF-IDF features, achieved the most consistent and generalizable results, confirming that linear approaches remain highly competitive on small, imbalanced datasets. Deep learning architectures such as \texttt{LSTM} and \texttt{DistilBERT} didn't demonstrate any improvements for frequent categories and struggled with rare labels even more, mainly due to the short message length and limited contextual richness of the dataset.
+Across all experiments, traditional machine learning models, particularly \texttt{LinearSVC} with BoW and TF-IDF features, achieved the most consistent and generalizable results across multi-label classification of messages into 35 distinct categories, confirming that linear approaches remain highly competitive on small, imbalanced datasets. Deep architectures for vector sequence processing such as LSTM and DistilBERT didn't demonstrate any significant improvements for frequent categories and struggled with rare labels even more, mainly due to the short message length and limited contextual richness of the dataset.
 
 Beyond performance metrics, the pipeline successfully integrated multiple analytical components into a unified framework for disaster data understanding. 
 
@@ -767,7 +776,7 @@ Beyond performance metrics, the pipeline successfully integrated multiple analyt
 \end{enumerate}
 Together, these layers produce a multi-faceted analytical toolset capable of supporting emergency response operations through automated categorization, triage, and summarization.
 
-Future work should explore approaches for mitigating class imbalance, such as data augmentation, focal loss, or semi-supervised learning. Expanding the dataset to include multilingual and cross-platform sources would further enhance model robustness and generalization. Additionally, integrating multimodal data — such as images or geolocation metadata — could substantially improve situational awareness and decision-making capacity in real-time disaster management.
+Future work should explore approaches for mitigating class imbalance, such as data augmentation, focal loss, or semi-supervised learning, exploring TF-IDF weighted sentence embeddings. Expanding the dataset to include multilingual and cross-platform sources would further enhance model robustness and generalization. Additionally, integrating multimodal data such as images or geolocation metadata, could substantially improve situational awareness and decision-making capacity in real-time disaster management. It is also important to state that on such a small corpus, it is better to use pre-trained embedding models.
 
 Ultimately, this project demonstrates that even modestly scaled NLP pipelines, when designed with domain constraints in mind, can deliver significant operational value in crisis response scenarios, bridging the gap between academic modeling and practical humanitarian applications.
 
