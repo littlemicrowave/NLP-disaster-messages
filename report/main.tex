@@ -71,7 +71,14 @@ This project presents a comprehensive natural language processing pipeline for m
 \\
 \\
 \\
-Source code and additional visualizations are available at: \url{https://github.com/littlemicrowave/NLP-disaster-messages} 
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+Source code available at: \url{https://github.com/littlemicrowave/NLP-disaster-messages} \\ 
 \\
 Keywords: NLP, Topic Modeling, Deep Learning, Machine Learning, NER, LDA, Sentiment analysis, Text Preprocessing, Message Classification 
 \end{abstract}
@@ -276,7 +283,7 @@ Bag-of-Words and TF-IDF vectorizers produced 6,224 features after filtering (\te
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{figures/word2vec_pca.png}
+  \includegraphics[width=0.65\textwidth]{figures/word2vec_pca.png}
   \caption{PCA projection of Word2Vec embeddings}
   \label{fig:feat_pca}
 \end{figure}
@@ -663,7 +670,7 @@ The NER process successfully identified key entities across the corpus. A freque
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\linewidth]{figures/ner_bar.png}
+  \includegraphics[width=0.65\linewidth]{figures/ner_bar.png}
   \caption{Top 10 Named Entity Types bar chart}
   \label{fig:ner_bar}
 \end{figure}
@@ -723,25 +730,20 @@ The project faced several limitations. The aggressive text cleaning, while benef
 
 \section{Practical Implications for Disaster Response}
 
-The implemented pipeline provides multiple actionable components for emergency response. Traditional machine learning models, such as LinearSVC with TF-IDF features, offer a robust and efficient method for automatic message categorization. Named Entity Recognition (NER) enables the extraction of entities such as \texttt{GPE} (locations), \texttt{DATE}, and \texttt{ORG}, which support geographic triage and coordination efforts. Sentiment Analysis adds a layer of urgency estimation by distinguishing negative from positive emotional tone to assist in prioritization. Furthermore, Topic Modeling methods such as LDA and BERTopic summarize public concerns and emerging discussion themes, supporting strategic decision-making. 
+The implemented pipeline provides multiple actionable components for emergency response. Traditional machine learning models, such as \texttt{LinearSVC} with TF-IDF features, offer a robust and efficient method for automatic message categorization. Named Entity Recognition (NER) enables the extraction of entities such as \texttt{GPE} (locations), \texttt{DATE}, and \texttt{ORG}, which support geographic triage and coordination efforts. Sentiment Analysis adds a layer of urgency estimation by distinguishing negative from positive emotional tone to assist in prioritization. Furthermore, Topic Modeling methods such as LDA and BERTopic summarize public concerns and emerging discussion themes, supporting strategic decision-making. 
 
 Together, these integrated tools can significantly reduce the manual burden on emergency operators, enhance real-time situational awareness, and improve the overall efficiency of information processing during disaster response scenarios.
 
 \section{Discussion}
 
-The aggressive cleaning strategy effectively prepared text for traditional machine learning by reducing noise and dimensionality. However, this approach represented a trade-off that removed structural features (punctuation, capitalization) potentially valuable for transformer-based models and Named Entity Recognition (NER). 
+The aggressive cleaning strategy effectively prepared text for traditional machine learning by reducing noise and dimensionality. However, this approach represented a trade-off that removed structural features (punctuation, capitalization) valuable for transformer-based models and Named Entity Recognition (NER). 
 
 In addition, traditional feature representations effectively captured the disaster-specific lexicon, while embeddings learned semantic relationships. The vocabulary size difference between vectorizers (6,224) and Word2Vec (6,366) indicated that the embedding model captured additional morphological variants. The short message length characteristic fundamentally constrained sequential model design.
 
-The linear dense network trained on TF-IDF features achieved the most balanced performance, with a macro-F1 score around 0.38 and a micro-F1 near 0.67, followed by DistilBERT. Models built on Word2Vec embeddings or trainable embedding layers underperformed, largely due to the dataset’s short message lengths, small vocabulary, and class imbalance. The LSTM architecture did not provide any advantage, as most messages contained few tokens after cleaning, offering little sequential information for the recurrent layers — the same limitation also applied to transformer-based architectures such as DistilBERT. Additionally, training word embeddings from scratch on such a small corpus led to fast overfitting and weak generalization to rare labels.
+The linear dense network trained on TF-IDF features achieved the most balanced performance, with a macro-F1 score around 0.38 and a micro-F1 near 0.67, followed by \texttt{DistilBERT}. Models built on \texttt{Word2Vec} embeddings or trainable embedding layers underperformed, largely due to the dataset’s short message lengths, small vocabulary, and class imbalance. The \texttt{LSTM} architecture did not provide any advantage, as most messages contained few tokens after cleaning, offering little sequential information for the recurrent layers — the same limitation also applied to transformer-based architectures such as \texttt{DistilBERT}. Additionally, training word embeddings from scratch on such a small corpus led to fast overfitting and weak generalization to rare labels.
 
-While classification formed the core analytical task, auxiliary components such as Named Entity Recognition (NER), Sentiment Analysis, and Topic Modeling provided complementary insights that expanded the interpretive power of the system.
-
-The spaCy-based NER module reliably extracted geographic (\texttt{GPE}) and organizational (\texttt{ORG}) entities, providing structured, actionable information for identifying key areas and stakeholders in disaster communications. Although the model introduced some noise in \texttt{Person}-type entities, its overall accuracy demonstrated strong potential for automated location and organization tagging in real-world response pipelines.
-
-Sentiment Analysis, performed with VADER and TextBlob, offered an additional emotional dimension to the textual analysis. VADER was especially sensitive to urgent or distressing messages, detecting strong negative sentiment in categories such as \texttt{death} and \texttt{military}, while TextBlob produced smoother polarity distributions. The observed alignment between sentiment intensity and disaster-related categories suggests that polarity cues can act as useful early indicators for prioritization in crisis communication systems.
-
-Topic Modeling with LDA and BERTopic further expanded the analysis by uncovering latent structures in the message corpus. LDA identified general themes such as “Basic Needs” and “Infrastructure Damage,” while BERTopic revealed finer-grained clusters such as “Hurricane Sandy” and “Requests for Help.” The contrast between the coarse-grained global topics and the event-specific clusters demonstrated how combining traditional probabilistic and transformer-based topic models can provide both strategic overviews and situational detail. This layered understanding of public discourse can guide emergency planners and humanitarian organizations in allocating resources and monitoring evolving crisis themes.
+While classification was the primary analytical focus, auxiliary modules — Named Entity Recognition (NER), Sentiment Analysis, and Topic Modeling added interpretive depth to the system. The spaCy-based NER module effectively extracted geographic (\texttt{GPE}) and organizational (\texttt{ORG}) entities, yielding structured, actionable information for identifying key locations and actors in disaster communications. Despite minor noise in \texttt{Person}-type entities, it demonstrated strong potential for automated tagging in real-world response pipelines. Sentiment Analysis using \texttt{VADER} and \texttt{TextBlob} introduced an emotional dimension, with \texttt{VADER} capturing urgency and distress—particularly in \texttt{death} and \texttt{military} messages—while \texttt{TextBlob} produced smoother polarity trends. The alignment between sentiment and disaster categories suggests sentiment cues can help prioritize urgent communications.
+Topic Modeling with LDA and \texttt{BERTopic} uncovered latent structures within the corpus. LDA identified broad themes such as basic need and infrastructure damage, whereas \texttt{BERTopic} revealed specific, event-driven clusters like Hurricane Sandy and requests for help.
 
 For short, noisy posts and small datasets, classical linear models over BoW and TF-IDF remain a strong baseline. These models offer interpretability, efficiency, and resilience to class imbalance, all of which are critical for real-world disaster response systems. While deep architectures show promise in learning semantic and contextual relations, they require larger and more diverse data to reach their potential. Furthermore, integrating interpretive layers such as NER, sentiment, and topic modeling enhances the pipeline’s overall analytical depth, transforming raw message classification into a comprehensive framework for actionable disaster intelligence.
 
@@ -749,9 +751,16 @@ For short, noisy posts and small datasets, classical linear models over BoW and 
 
 This project implemented a complete natural language processing pipeline for disaster response message classification, including data cleaning, feature extraction, classical and deep learning classification, as well as complementary analyses. 
 
-Across all experiments, traditional machine learning models, particularly LinearSVC with TF-IDF features, achieved the most consistent and generalizable results, confirming that linear approaches remain highly competitive on small, imbalanced datasets. Deep learning architectures such as LSTM and DistilBERT didn't demonstrate any improvements for frequent categories and struggled with rare labels even more, mainly due to the short message length and limited contextual richness of the dataset.
+Across all experiments, traditional machine learning models, particularly \texttt{LinearSVC} with TF-IDF features, achieved the most consistent and generalizable results, confirming that linear approaches remain highly competitive on small, imbalanced datasets. Deep learning architectures such as \texttt{LSTM} and \texttt{DistilBERT} didn't demonstrate any improvements for frequent categories and struggled with rare labels even more, mainly due to the short message length and limited contextual richness of the dataset.
 
-Beyond performance metrics, the pipeline successfully integrated multiple analytical components into a unified framework for disaster data understanding. NER effectively extracted geographical and organizational information; Topic Modeling revealed thematic structures within the corpus; and Sentiment Analysis provided insights into the emotional polarity of crisis communications. Together, these layers produce a multi-faceted analytical toolset capable of supporting emergency response operations through automated categorization, triage, and summarization.
+Beyond performance metrics, the pipeline successfully integrated multiple analytical components into a unified framework for disaster data understanding. 
+
+\begin{enumerate}
+  \item NER effectively extracted geographical and organizational information;
+  \item Topic Modeling revealed thematic structures within the corpus
+  \item Sentiment Analysis provided insights into the emotional polarity of crisis communications. 
+\end{enumerate}
+Together, these layers produce a multi-faceted analytical toolset capable of supporting emergency response operations through automated categorization, triage, and summarization.
 
 Future work should explore approaches for mitigating class imbalance, such as data augmentation, focal loss, or semi-supervised learning. Expanding the dataset to include multilingual and cross-platform sources would further enhance model robustness and generalization. Additionally, integrating multimodal data — such as images or geolocation metadata — could substantially improve situational awareness and decision-making capacity in real-time disaster management.
 
