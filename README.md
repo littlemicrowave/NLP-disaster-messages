@@ -38,3 +38,33 @@ It is possible to run a notebooks is sequence, starting from the preprocessing, 
 ## Dataset Artifacts
 
 The repository already includes serialized feature matrices and labels (e.g., `tfidf_train.pkl`, `tfidf_test.pkl`, `sense_vectors_train.pkl`, `sequences_train.pkl`, `y_train.pkl`). The notebooks load these files directly; delete them only if you intend to regenerate everything from raw data via `Loading_preprocessing.ipynb`.
+
+# Research plan
+
+Research question and novelty?
+
+Focus can be put on fine-tuning the LLM and achieving a low level of model hallucinations when generating new disaster-relevant messages, if proper conditioning is done. For proper conditioning of disaster-relevant messages, we need to disseminate tweets, for instance, NER, Sentiment, disaster phase, and keywords + category (available); therefore, sophisticated feature engineering is required.
+
+Focus can be put on an effective categorization pipeline (try to improve current F1-scores), which also requires sophisticated feature engineering employing disaster phase detection, keyword extraction, message sentiment, and named entities. We may probably try to use clustering-based methods, for instance, try to combine LDA/BERTopic/HDBSCAN clusters and word-frequency per category (some messages belong to multiple). For event detection, we can use our BERT model, which has 91% F1-score.
+
+## Current situation.
+
+Regarding message dissemination, we have: 
+
+  1. NER.
+  2. Sentiment Analysis.
+  3. Topic modeling (BERTopic, LDA).
+  4. Categories.
+  5. Preprocessing stuff.
+     
+## TODO:
+
+Depending on the research question:
+
+* We may use or even try to improve the Tweet4Act rule + PoS based approach on disaster phase detection. For instance, we can use rule based + PoS approach to detect easy, high-precision phase tags, and later perform semi-supervised training of a deep learning model.
+* Keywords per category
+* Implement a Tweet4Act-based high-precision phase labeler (POS/tense + temporal lexicons).
+* We need a validation set for phase/state evaluation.
+* Weakly supervised transformer to try generalize phase detection beyond rules.
+* Finalize conditioning schema/features for classifier input (category + phase + entities + topic/keywords + urgency).
+* Generation experiment and measure hallucination/constraint adherence.
