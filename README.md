@@ -61,7 +61,7 @@ Regarding message dissemination, we have:
 
 Depending on the research question (it was decided to move on with both)
 We may use or even try to improve the Tweet4Act rule + PoS based approach on disaster phase detection. For instance, we can use rule based + PoS approach to detect easy, high-precision phase tags, and later perform semi-supervised training of a deep learning model.
-* Keywords per category (ALMOST) Currently chi2 + idf reweightning is used, Benjamini–Hochberg FDR correction?
+* Keywords per category (ALMOST) Currently chi2 + idf reweightning is used. Benjamini–Hochberg FDR correction? conditional filtering?
 * Keyword extractor from individual messages: RAKE?
 * Finalize Tweet4Act-based high-precision phase labeler (POS/tense + temporal lexicons). (WORK IN PROGRESS)
 * We need a validation set for phase/state evaluation, some can be labeled manually, for some we can use LLM, CoT approach
