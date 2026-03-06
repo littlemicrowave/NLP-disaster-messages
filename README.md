@@ -56,6 +56,10 @@ Regarding message dissemination, we have:
   3. Topic modeling (BERTopic, LDA).
   4. Categories.
   5. Preprocessing stuff.
+
+Some notes:
+
+* Regarding keywords (in addition to current keyword analysis apporach and lexicon construction), we can also use our Topic Modelling approaches ber category, extract N topics from each category and constuct a category specific lexicon this way, then use Jaccard Similarity.
      
 ## TODO:
 
